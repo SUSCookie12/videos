@@ -3,7 +3,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   CookieMovie - 📺Videos
+    CookieMovie - 📺Videos
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -83,169 +83,257 @@
         font-size: 12px;
         border-radius: 50%;
     }
+    @media (max-width: 768px) {
+        .sidebar {
+            display: none;
+        }
+        .mobile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #2d3748;
+        }
+        .mobile-header .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #2d3748;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+        }
+        .mobile-menu a {
+            padding: 10px;
+            color: #cbd5e0;
+            text-decoration: none;
+        }
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+    }
   </style>
  </head>
  <body class="bg-gray-900 text-white">
-  <div class="flex">
-   <!-- Sidebar -->
-   <div class="w-1/5 bg-gray-800 h-screen p-5">
-    <div class="flex items-center mb-10">
-     <div class="bg-green-500 p-2 rounded-full">
-      <i class="fas fa-cat text-white">
-      </i>
-     </div>
-     <span class="ml-3 text-xl font-bold">
-      CookieMovie
-     </span>
+  <div class="flex flex-col">
+   <!-- Mobile Header -->
+   <div class="mobile-header w-full p-5 md:hidden">
+    <div class="menu-icon" id="menuIcon">
+     <i class="fas fa-bars">
+     </i>
     </div>
-    <nav>
-     <ul class="space-y-4">
-      <li class="flex items-center text-green-500 cursor-pointer">
-       <i class="fas fa-home">
-       </i>
-       <span class="ml-3">
-        Home
-       </span>
-      </li>
-      <hr class="border-gray-600"/>
-      <li class="flex items-center text-gray-400 cursor-pointer">
-       <i class="fas fa-clock">
-       </i>
-       <span class="ml-3">
-        Coming Soon
-       </span>
-      </li>
-     </ul>
-    </nav>
-    <div class="mt-10">
-     <ul class="space-y-4">
-      <li class="flex items-center text-gray-400 cursor-pointer">
-       <i class="fas fa-cog">
-       </i>
-       <span class="ml-3">
-        Settings - Coming Soon
-       </span>
-      </li>
-      <li class="flex items-center text-gray-400 cursor-pointer">
-       <i class="fas fa-question-circle">
-       </i>
-       <span class="ml-3">
-        Help
-       </span>
-      </li>
-     </ul>
+    <div class="text-xl font-bold">
+     CookieMovie
     </div>
    </div>
-   <!-- Main Content -->
-   <div class="w-4/5 p-5">
-    <div class="flex justify-between items-center mb-8">
-     <div>
-      <button class="text-gray-400" onclick="window.location.href='index.html'">
-       Library
-      </button>
-      <button class="text-white font-bold mr-5">
-       Videos
-      </button>
-     </div>
-     <div class="flex items-center relative">
-      <div class="relative">
-       <input class="bg-gray-700 text-white rounded-full pl-10 pr-4 py-2" placeholder="Search" type="text" id="searchInput"/>
-       <i class="fas fa-search absolute left-3 top-2.5 text-gray-400">
+   <div class="mobile-menu md:hidden" id="mobileMenu">
+    <button class="close-btn" id="closeMobileMenu">
+     &times;
+    </button>
+    <a href="#" class="text-green-500">
+     Home
+    </a>
+    <a href="#">
+     Coming Soon
+    </a>
+    <a href="#">
+     Settings - Coming Soon
+    </a>
+    <a href="#">
+     Help
+    </a>
+   </div>
+   <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-gray-800 h-screen p-5 sidebar">
+     <div class="flex items-center mb-10">
+      <div class="bg-green-500 p-2 rounded-full">
+       <i class="fas fa-cat text-white">
        </i>
       </div>
-      <div class="ml-5 relative">
-       <button id="notificationButton" class="relative">
-        <i class="fas fa-bell text-gray-400">
+      <span class="ml-3 text-xl font-bold">
+       CookieMovie
+      </span>
+     </div>
+     <nav>
+      <ul class="space-y-4">
+       <li class="flex items-center text-green-500 cursor-pointer">
+        <i class="fas fa-home">
         </i>
+        <span class="ml-3">
+         Home
+        </span>
+       </li>
+       <hr class="border-gray-600"/>
+       <li class="flex items-center text-gray-400 cursor-pointer">
+        <i class="fas fa-clock">
+        </i>
+        <span class="ml-3">
+         Coming Soon
+        </span>
+       </li>
+      </ul>
+     </nav>
+     <div class="mt-10">
+      <ul class="space-y-4">
+       <li class="flex items-center text-gray-400 cursor-pointer">
+        <i class="fas fa-cog">
+        </i>
+        <span class="ml-3">
+         Settings - Coming Soon
+        </span>
+       </li>
+       <li class="flex items-center text-gray-400 cursor-pointer">
+        <i class="fas fa-question-circle">
+        </i>
+        <span class="ml-3">
+         Help
+        </span>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <!-- Main Content -->
+    <div class="w-full md:w-4/5 p-5">
+     <div class="flex justify-between items-center mb-5">
+      <div>
+       <button class="text-white font-bold mr-5">
+        Videos
        </button>
-       <div class="notification-popup" id="notificationPopup">
-        <button class="close-btn" id="closeNotificationPopup">
-         &times;
-        </button>
-        <ul>
-         <li>
-          Notification 1
-         </li>
-         <li>
-          Notification 2
-         </li>
-         <li>
-          Notification 3
-         </li>
-        </ul>
+       <button class="text-gray-400" onclick="window.location.href='index.html'">
+        Library
+       </button>
+      </div>
+      <div class="flex items-center relative">
+       <div class="relative">
+        <input class="bg-gray-700 text-white rounded-full pl-10 pr-4 py-2" placeholder="Search" type="text" id="searchInput"/>
+        <i class="fas fa-search absolute left-3 top-2.5 text-gray-400">
+        </i>
        </div>
+       <div class="ml-5 relative">
+        <button id="notificationButton" class="relative">
+         <i class="fas fa-bell text-gray-400">
+         </i>
+        </button>
+        <div class="notification-popup" id="notificationPopup">
+         <button class="close-btn" id="closeNotificationPopup">
+          &times;
+         </button>
+         <ul>
+          <li>
+           Notification 1
+          </li>
+          <li>
+           Notification 2
+          </li>
+          <li>
+           Notification 3
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="flex">
+      <div class="w-full md:w-3/4 pr-5">
+       <h2 class="text-2xl font-bold mb-5">
+        Videos Collection
+    </h2>
+    <div class="grid grid-cols-3 gap-4">
+      
+     <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Beginner Tutorial" data-video="https://www.youtube.com/embed/CgHgqZW4mfc" style="width: 240px; height: 135px;">
+      <div class="absolute inset-0">
+       <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/CgHgqZW4mfc/hqdefault.jpg"/>
+      </div>
+      <div class="absolute bottom-2 left-2">
+       <h3 class="text-sm font-bold">
+        Завръщаме Fortnite УДЪРНО! Marvel Season is Back
+       </h3>
+      </div>
+     </div>
+     <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Intermediate Tutorial" data-video="https://www.youtube.com/embed/NAktVKUP5G8" style="width: 240px; height: 135px;">
+      <div class="absolute inset-0">
+       <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/NAktVKUP5G8/hqdefault.jpg"/>
+      </div>
+      <div class="absolute bottom-2 left-2">
+       <h3 class="text-sm font-bold">
+        😮Phasmophobia Еп.1 |!!!Дух печели 2VS1!!!|😮
+       </h3>
+      </div>
+     </div>
+     <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/jusZkkk5H04" style="width: 240px; height: 135px;">
+      <div class="absolute inset-0">
+       <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/jusZkkk5H04/hqdefault.jpg"/>
+      </div>
+      <div class="absolute bottom-2 left-2">
+       <h3 class="text-sm font-bold">
+        How to Make a Website with HTML and CSS - Advanced Tutorial
+       </h3>
+      </div>
+     </div>
+     <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/KaCkMyPXhek" style="width: 240px; height: 135px;">
+      <div class="absolute inset-0">
+       <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/KaCkMyPXhek/hqdefault.jpg"/>
+      </div>
+      <div class="absolute bottom-2 left-2">
+       <h3 class="text-sm font-bold">
+        How to Make a Website with HTML and CSS - Advanced Tutorial
+       </h3>
+      </div>
+     </div>
+     <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/MrZ0kE2Ydjs" style="width: 240px; height: 135px;">
+      <div class="absolute inset-0">
+       <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/MrZ0kE2Ydjs/hqdefault.jpg"/>
+      </div>
+      <div class="absolute bottom-2 left-2">
+       <h3 class="text-sm font-bold">
+        How to Make a Website with HTML and CSS - Advanced Tutorial
+       </h3>
+      </div>
+     </div>
+     <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/VfXs0nqQ6Fs" style="width: 240px; height: 135px;">
+      <div class="absolute inset-0">
+       <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/VfXs0nqQ6Fs/hqdefault.jpg"/>
+      </div>
+      <div class="absolute bottom-2 left-2">
+       <h3 class="text-sm font-bold">
+        How to Make a Website with HTML and CSS - Advanced Tutorial
+       </h3>
       </div>
      </div>
     </div>
-    <div class="flex">
-     <div class="w-3/4 pr-5">
-      <h2 class="text-2xl font-bold mb-5">
-       Videos Collection
-      </h2>
-      <div class="grid grid-cols-3 gap-4">
-        
-       <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Beginner Tutorial" data-video="https://www.youtube.com/embed/CgHgqZW4mfc" style="width: 240px; height: 135px;">
-        <div class="absolute inset-0">
-         <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/CgHgqZW4mfc/hqdefault.jpg"/>
-        </div>
-        <div class="absolute bottom-2 left-2">
-         <h3 class="text-sm font-bold">
-          Завръщаме Fortnite УДЪРНО! Marvel Season is Back
-         </h3>
-        </div>
+   </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+      <div class="w-1/4 pl-5 relative coming-soon hidden md:block">
+       <div class="absolute top-0 left-0 h-full w-1 bg-gray-700 rounded-full">
        </div>
-       <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Intermediate Tutorial" data-video="https://www.youtube.com/embed/NAktVKUP5G8" style="width: 240px; height: 135px;">
-        <div class="absolute inset-0">
-         <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/NAktVKUP5G8/hqdefault.jpg"/>
-        </div>
-        <div class="absolute bottom-2 left-2">
-         <h3 class="text-sm font-bold">
-          😮Phasmophobia Еп.1 |!!!Дух печели 2VS1!!!|😮
-         </h3>
-        </div>
+       <h2 class="text-2xl font-bold mb-5">
+        Coming Soon
+       </h2>
+       <div class="bg-gray-700 rounded-lg h-20 flex items-center justify-center">
+        <p class="text-gray-400">
+         Coming Soon
+        </p>
        </div>
-       <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/jusZkkk5H04" style="width: 240px; height: 135px;">
-        <div class="absolute inset-0">
-         <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/jusZkkk5H04/hqdefault.jpg"/>
-        </div>
-        <div class="absolute bottom-2 left-2">
-         <h3 class="text-sm font-bold">
-          How to Make a Website with HTML and CSS - Advanced Tutorial
-         </h3>
-        </div>
-       </div>
-       <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/KaCkMyPXhek" style="width: 240px; height: 135px;">
-        <div class="absolute inset-0">
-         <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/KaCkMyPXhek/hqdefault.jpg"/>
-        </div>
-        <div class="absolute bottom-2 left-2">
-         <h3 class="text-sm font-bold">
-          How to Make a Website with HTML and CSS - Advanced Tutorial
-         </h3>
-        </div>
-       </div>
-       <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/MrZ0kE2Ydjs" style="width: 240px; height: 135px;">
-        <div class="absolute inset-0">
-         <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/MrZ0kE2Ydjs/hqdefault.jpg"/>
-        </div>
-        <div class="absolute bottom-2 left-2">
-         <h3 class="text-sm font-bold">
-          How to Make a Website with HTML and CSS - Advanced Tutorial
-         </h3>
-        </div>
-       </div>
-       <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/VfXs0nqQ6Fs" style="width: 240px; height: 135px;">
-        <div class="absolute inset-0">
-         <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/VfXs0nqQ6Fs/hqdefault.jpg"/>
-        </div>
-        <div class="absolute bottom-2 left-2">
-         <h3 class="text-sm font-bold">
-          How to Make a Website with HTML and CSS - Advanced Tutorial
-         </h3>
-        </div>
-       </div>
-      </div>
-     </div>
       </div>
      </div>
     </div>
@@ -313,6 +401,20 @@
     document.getElementById('closeNotificationPopup').addEventListener('click', function() {
         const notificationPopup = document.getElementById('notificationPopup');
         notificationPopup.style.display = 'none';
+    });
+
+    document.getElementById('menuIcon').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+            mobileMenu.style.display = 'flex';
+        } else {
+            mobileMenu.style.display = 'none';
+        }
+    });
+
+    document.getElementById('closeMobileMenu').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.style.display = 'none';
     });
   </script>
  </body>
