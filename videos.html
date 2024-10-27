@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
   <style>
    body {
+            overflow-x: hidden; /* Hides horizontal scrollbar */
+            touch-action: pan-y; /* Prevent horizontal touch scrolling */
             font-family: 'Roboto', sans-serif;
         }
     .video-popup {
@@ -52,7 +54,7 @@
         display: none;
         position: absolute;
         top: 50px;
-        right: 0;
+        right: 50;
         width: 300px;
         background: #2d3748;
         border-radius: 8px;
@@ -137,17 +139,32 @@
      <i class="fas fa-bars">
      </i>
     </div>
-    <div class="text-xl font-bold">
-     CookieMovie
+    <button id="notificationButton" class="relative">
+        <i class="fas fa-bell text-gray-400">
+        </i>
+       </button>
+    <div class="flex items-center text-xl font-bold">
+        CookieMovie
+        <div class="bg-green-500 p-2 rounded-full ml-2">
+            <i class="fas fa-cookie text-white"></i>
+        </div>
     </div>
    </div>
+   </div>
    <div class="mobile-menu md:hidden" id="mobileMenu">
-    <button class="close-btn" id="closeMobileMenu">
-     &times;
-    </button>
-    <a href="#" class="text-green-500">
-     Home
+    <div class="flex items-center text-xl font-bold mb-4"> <!-- Added mb-4 for spacing below -->
+        <button class="bg-white rounded-full p-2 mr-2" id="closeMobileMenu">
+            <i class="fas fa-times text-black"></i>
+        </button>
+        <div class="bg-green-500 p-2 rounded-full mr-2">
+            <i class="fas fa-cookie text-white"></i>
+        </div>
+        CookieMovie
+    </div>
+    <a href="#" class="text-green-500 font-bold">
+        Home
     </a>
+    <div style="height: 2px; background-color: #ffffff; width: 86%; margin: 20px 0;"></div>
     <a href="#">
      Coming Soon
     </a>
@@ -226,10 +243,10 @@
         </i>
        </div>
        <div class="ml-5 relative">
-        <button id="notificationButton" class="relative">
-         <i class="fas fa-bell text-gray-400">
-         </i>
-        </button>
+        <button id="notificationButton1" class="relative">
+            <i class="fas fa-bell text-gray-400">
+            </i>
+           </button>
         <div class="notification-popup" id="notificationPopup">
          <button class="close-btn" id="closeNotificationPopup">
           &times;
@@ -252,7 +269,7 @@
      <div class="flex">
       <div class="w-full md:w-3/4 pr-5">
        <h2 class="text-2xl font-bold mb-5">
-        Videos Collection
+        Collection
     </h2>
     <div class="grid grid-cols-3 gap-4">
       
@@ -390,6 +407,15 @@
     });
 
     document.getElementById('notificationButton').addEventListener('click', function() {
+        const notificationPopup = document.getElementById('notificationPopup');
+        if (notificationPopup.style.display === 'none' || notificationPopup.style.display === '') {
+            notificationPopup.style.display = 'block';
+        } else {
+            notificationPopup.style.display = 'none';
+        }
+    });
+
+    document.getElementById('notificationButton1').addEventListener('click', function() {
         const notificationPopup = document.getElementById('notificationPopup');
         if (notificationPopup.style.display === 'none' || notificationPopup.style.display === '') {
             notificationPopup.style.display = 'block';
