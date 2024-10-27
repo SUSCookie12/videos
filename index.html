@@ -67,7 +67,7 @@
     }
     .notification-popup ul li {
         padding: 10px;
-        border-bottom: 1px solid #4a5568;
+        border-bottom: 1px solid #ffffff;
         color: #cbd5e0;
     }
     .notification-popup ul li:last-child {
@@ -161,8 +161,11 @@
         </div>
         CookieMovie
     </div>
-    <a href="#" class="text-green-500 font-bold">
+    <a href="index.html" class="text-green-500 font-bold">
         Home
+    </a>
+    <a href="notes.html" class="text-green-500 font-bold">
+        Notes
     </a>
     <div style="height: 2px; background-color: #ffffff; width: 86%; margin: 20px 0;"></div>
     <a href="#">
@@ -172,10 +175,7 @@
      Settings - Coming Soon
     </a>
     <a href="#">
-     Help
-    </a>
-    <a href="#">
-        Server development Version: 2.0.6.6
+     Server development Version: 2.0.6.6
     </a>
    </div>
    <div class="flex">
@@ -197,6 +197,9 @@
         </i>
         <span class="ml-3">
          Home
+        </span>
+        <span class="ml-3">
+         Notes
         </span>
        </li>
        <hr class="border-gray-600"/>
@@ -222,9 +225,6 @@
         <i class="fas fa-question-circle">
         </i>
         <span class="ml-3">
-         Help
-        </span>
-        <span class="ml-3">
          Server development Version: 2.0.6.6
         </span>
        </li>
@@ -244,8 +244,8 @@
       </div>
       <div class="flex items-center relative">
        <div class="relative">
-        <input class="bg-gray-700 text-white rounded-full pl-10 pr-4 py-2" placeholder="Search" type="text" id="searchInput"/>
-        <i class="fas fa-search absolute left-3 top-2.5 text-gray-400">
+        <input class="bg-[2d2d2d] text-white rounded-full pl-10 pr-4 py-2" placeholder="Search" type="text" id="searchInput"/>
+        <i class="fas fa-search absolute left-3 top-2.5 text-[fffff]">
         </i>
        </div>
        <div class="ml-5 relative">
@@ -255,8 +255,8 @@
         </button>
         <div class="notification-popup" id="notificationPopup">
          <button class="close-btn" id="closeNotificationPopup">
-          &times;
-         </button>
+            <i class="fas fa-times text-black"></i>
+        </button>
          <ul>
           <li>
            Notification 1
