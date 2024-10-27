@@ -94,7 +94,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            background: #2d3748;
+            background: #1c1c1c;
         }
         .mobile-header .menu-icon {
             font-size: 24px;
@@ -103,7 +103,7 @@
         .mobile-menu {
             display: none;
             flex-direction: column;
-            background: #2d3748;
+            background: #1c1c1c;
             padding: 10px;
             position: fixed;
             top: 0;
@@ -131,7 +131,7 @@
     }
   </style>
  </head>
- <body class="bg-gray-900 text-white">
+ <body class="bg-[#2e2e2e] text-white">
   <div class="flex flex-col">
    <!-- Mobile Header -->
    <div class="mobile-header w-full p-5 md:hidden">
@@ -174,13 +174,16 @@
     <a href="#">
      Help
     </a>
+    <a href="#">
+        Server development Version: 2.0.6.6
+    </a>
    </div>
    <div class="flex">
     <!-- Sidebar -->
-    <div class="w-1/5 bg-gray-800 h-screen p-5 sidebar">
+    <div class="w-1/5 bg-[1c1c1c] h-screen p-5 sidebar">
      <div class="flex items-center mb-10">
       <div class="bg-green-500 p-2 rounded-full">
-       <i class="fas fa-cat text-white">
+       <i class="fas fa-cookie text-white">
        </i>
       </div>
       <span class="ml-3 text-xl font-bold">
@@ -220,6 +223,9 @@
         </i>
         <span class="ml-3">
          Help
+        </span>
+        <span class="ml-3">
+         Server development Version: 2.0.6.6
         </span>
        </li>
       </ul>
@@ -357,9 +363,9 @@
    </div>
   </div>
   <div class="video-popup flex" style="display: none;">
-   <button class="close-btn">
-    &times;
-   </button>
+    <button class="close-btn">
+        <i class="fas fa-times text-black"></i>
+    </button>
    <iframe frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
    </iframe>
   </div>
