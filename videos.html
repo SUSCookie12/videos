@@ -56,7 +56,7 @@
         top: 50px;
         right: 50;
         width: 300px;
-        background: #2d3748;
+        background: #1c1c1c;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         z-index: 1000;
@@ -67,7 +67,7 @@
     }
     .notification-popup ul li {
         padding: 10px;
-        border-bottom: 1px solid #4a5568;
+        border-bottom: 1px solid #ffffff;
         color: #cbd5e0;
     }
     .notification-popup ul li:last-child {
@@ -161,8 +161,11 @@
         </div>
         CookieMovie
     </div>
-    <a href="#" class="text-green-500 font-bold">
+    <a href="index.html" class="text-green-500 font-bold">
         Home
+    </a>
+    <a href="notes.html" class="text-green-500 font-bold">
+        Notes
     </a>
     <div style="height: 2px; background-color: #ffffff; width: 86%; margin: 20px 0;"></div>
     <a href="#">
@@ -172,10 +175,7 @@
      Settings - Coming Soon
     </a>
     <a href="#">
-     Help
-    </a>
-    <a href="#">
-        Server development Version: 2.0.6.6
+     Server development Version: 2.0.6.6
     </a>
    </div>
    <div class="flex">
@@ -222,9 +222,6 @@
         <i class="fas fa-question-circle">
         </i>
         <span class="ml-3">
-         Help
-        </span>
-        <span class="ml-3">
          Server development Version: 2.0.6.6
         </span>
        </li>
@@ -235,28 +232,28 @@
     <div class="w-full md:w-4/5 p-5">
      <div class="flex justify-between items-center mb-5">
       <div>
+       <button class="text-gray-400 mr-5" onclick="window.location.href='index.html'">
+        Library
+       </button>
        <button class="text-white font-bold mr-5">
         Videos
        </button>
-       <button class="text-gray-400" onclick="window.location.href='index.html'">
-        Library
-       </button>
       </div>
       <div class="flex items-center relative">
-       <div class="relative">
-        <input class="bg-gray-700 text-white rounded-full pl-10 pr-4 py-2" placeholder="Search" type="text" id="searchInput"/>
-        <i class="fas fa-search absolute left-3 top-2.5 text-gray-400">
-        </i>
-       </div>
+        <div class="relative">
+         <input class="bg-[2d2d2d] text-white rounded-full pl-10 pr-4 py-2" placeholder="Search" type="text" id="searchInput"/>
+         <i class="fas fa-search absolute left-3 top-2.5 text-[fffff]">
+         </i>
+        </div>
        <div class="ml-5 relative">
         <button id="notificationButton1" class="relative">
             <i class="fas fa-bell text-gray-400">
             </i>
            </button>
         <div class="notification-popup" id="notificationPopup">
-         <button class="close-btn" id="closeNotificationPopup">
-          &times;
-         </button>
+        <button class="close-btn" id="closeNotificationPopup">
+            <i class="fas fa-times text-black"></i>
+        </button>
          <ul>
           <li>
            Notification 1
