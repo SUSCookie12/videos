@@ -1,5 +1,7 @@
 <html lang="en">
  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/duotone.min.css"> <!-- Duotone icons -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -10,7 +12,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
   <style>
-   body {
+    body {
             overflow-x: hidden; /* Hides horizontal scrollbar */
             touch-action: pan-y; /* Prevent horizontal touch scrolling */
             font-family: 'Roboto', sans-serif;
@@ -129,30 +131,39 @@
             border-radius: 50%;
         }
     }
+    .redirect-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: #262626; /* Background color */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        font-size: 16px; /* Font size */
+    }
+    .redirect-button i {
+        font-size: 1rem; /* Icon size */
+    }
   </style>
  </head>
  <body class="bg-[#2e2e2e] text-white">
   <div class="flex flex-col">
-   <!-- Mobile Header -->
+    <!-- Mobile Header -->
    <div class="mobile-header w-full p-5 md:hidden">
-    <div class="menu-icon" id="menuIcon">
-     <i class="fas fa-bars">
-     </i>
-    </div>
-    <button id="notificationButton" class="relative">
-        <i class="fas fa-bell text-gray-400">
-        </i>
-       </button>
     <div class="flex items-center text-xl font-bold">
         CookieMovie
         <div class="bg-green-500 p-2 rounded-full ml-2">
             <i class="fas fa-cookie text-white"></i>
         </div>
     </div>
+    <button class="redirect-button" onclick="window.location.href='index.html'">
+        <i class="fas fa-arrow-rotate-left"></i>
+    </button>
    </div>
    </div>
    <div class="mobile-menu md:hidden" id="mobileMenu">
-    <div class="flex items-center text-xl font-bold mb-4"> <!-- Added mb-4 for spacing below -->
+    <div class="flex items-center text-xl font-bold mb-4"> 
         <button class="bg-white rounded-full p-2 mr-2" id="closeMobileMenu">
             <i class="fas fa-times text-black"></i>
         </button>
@@ -169,13 +180,10 @@
     </a>
     <div style="height: 2px; background-color: #ffffff; width: 86%; margin: 20px 0;"></div>
     <a href="#">
-     Coming Soon
-    </a>
+        Coming Soon
+       </a>
     <a href="#">
-     Settings - Coming Soon
-    </a>
-    <a href="#">
-     Server development Version: 2.0.7.8
+      Development Version: 3.7.7.7
     </a>
    </div>
    <div class="flex">
@@ -192,37 +200,32 @@
      </div>
      <nav>
       <ul class="space-y-4">
-       <li class="flex items-center text-green-500 cursor-pointer">
-        <i class="fas fa-home">
-        </i>
-        <span class="ml-3">
-         Home
-        </span>
-       </li>
-       <hr class="border-gray-600"/>
-       <li class="flex items-center text-gray-400 cursor-pointer">
-        <i class="fas fa-clock">
-        </i>
-        <span class="ml-3">
-         Coming Soon
-        </span>
-       </li>
+        <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='index.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-home"></i>
+            <span class="ml-3">Home</span>
+        </li>
+           <hr class="border-gray-600"/>
+           <li class="flex items-center text-green-400 cursor-pointer mb-4" onclick="window.location.href='notes.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-sticky-note"></i>
+            <span class="ml-3">Notes</span>
+        </li>
+        <hr class="border-gray-600"/>
+        <li class="flex items-center text-gray-400 cursor-pointer">
+            <i class="fas fa-clock">
+            </i>
+            <span class="ml-3">
+             Coming Soon
+            </span>
+           </li>
       </ul>
      </nav>
      <div class="mt-10">
       <ul class="space-y-4">
        <li class="flex items-center text-gray-400 cursor-pointer">
-        <i class="fas fa-cog">
-        </i>
-        <span class="ml-3">
-         Settings - Coming Soon
-        </span>
-       </li>
-       <li class="flex items-center text-gray-400 cursor-pointer">
         <i class="fas fa-question-circle">
         </i>
         <span class="ml-3">
-         Server development Version: 2.0.7.8
+         Development Version: 3.7.7.7
         </span>
        </li>
       </ul>
@@ -230,54 +233,61 @@
     </div>
     <!-- Main Content -->
     <div class="w-full md:w-4/5 p-5">
-     <div class="flex justify-between items-center mb-5">
-      <div>
-       <button class="text-gray-400 mr-5" onclick="window.location.href='index.html'">
-        Library
-       </button>
-       <button class="text-gray-400 mr-5" onclick="window.location.href='videos.html'">
-        Videos
-       </button>
-      </div>
-      <div class="flex items-center relative">
-        <div class="relative">
-         <input class="bg-[2d2d2d] text-white rounded-full pl-10 pr-4 py-2" placeholder="Search" type="text" id="searchInput"/>
-         <i class="fas fa-search absolute left-3 top-2.5 text-[fffff]">
-         </i>
+    <div class="flex bg-[1a1a1a] text-gray-300 p-6 rounded-lg shadow-lg">
+        <div class="w-full md:w-3/4 pr-5 mx-auto flex flex-col items-center"> <!-- Centering the content -->
+            <h2 class="text-2xl font-bold mb-5 text-gray-100 border-b border-gray-700 pb-2 text-center">
+                Update Notes
+            </h2>
+            <style>
+                @keyframes glow1 {
+                    0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); } /* Red */
+                    25% { box-shadow: 0 0 10px rgba(255, 165, 0, 0.7); } /* Orange */
+                    50% { box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); } /* Yellow */
+                    75% { box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); } /* Green */
+                }
+        
+                @keyframes glow2 {
+                    0%, 100% { box-shadow: 0 0 10px rgba(0, 0, 255, 0.7); } /* Blue */
+                    25% { box-shadow: 0 0 10px rgba(75, 0, 130, 0.7); } /* Indigo */
+                    50% { box-shadow: 0 0 10px rgba(238, 130, 238, 0.7); } /* Violet */
+                    75% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); } /* Cyan */
+                }
+        
+                @keyframes glow3 {
+                    0%, 100% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.7); } /* Deep Pink */
+                    25% { box-shadow: 0 0 10px rgba(255, 105, 180, 0.7); } /* Hot Pink */
+                    50% { box-shadow: 0 0 10px rgba(255, 192, 203, 0.7); } /* Pink */
+                    75% { box-shadow: 0 0 10px rgba(255, 0, 255, 0.7); } /* Magenta */
+                }
+        
+                .glow1 {
+                    animation: glow1 3s infinite alternate;
+                }
+        
+                .glow2 {
+                    animation: glow2 3s infinite alternate;
+                }
+        
+                .glow3 {
+                    animation: glow3 3s infinite alternate;
+                }
+            </style>
+        
+            <ul class="list-none space-y-4 text-center"> <!-- Centered list items -->
+                <li class="flex items-start justify-center bg-[262626] p-4 rounded-lg shadow-md glow1">
+                    <div class="mr-2">🌑</div>
+                    <div>We updated and improved the site with new features and dark design.🕶️</div>
+                </li>
+                <li class="flex items-start justify-center bg-[262626] p-4 rounded-lg shadow-md glow2">
+                    <div class="mr-2">📱</div>
+                    <div>The site is now responsive and works on mobile devices without any issues.</div>
+                </li>
+                <li class="flex items-start justify-center bg-[262626] p-4 rounded-lg shadow-md glow3">
+                    <div class="mr-2">📺</div>
+                    <div>We uploaded some of our best videos for you to watch.</div>
+                </li>
+            </ul>
         </div>
-       <div class="ml-5 relative">
-        <button id="notificationButton1" class="relative">
-            <i class="fas fa-bell text-gray-400">
-            </i>
-           </button>
-        <div class="notification-popup" id="notificationPopup">
-        <button class="close-btn" id="closeNotificationPopup">
-            <i class="fas fa-times text-black"></i>
-        </button>
-        <ul>
-         <li>
-           🌑New Dark interface🕶️
-         </li>
-         <li>
-           📱Resposive Mobile Version of the site📱
-         </li>
-         <li>
-           📺New uploaded videos📺
-         </li>
-         </ul>
-        </div>
-       </div>
-      </div>
-     </div>
-     <div class="flex">
-      <div class="w-full md:w-3/4 pr-5">
-       <h2 class="text-2xl font-bold mb-5">
-        Update Notes
-        </h2>
-        <p>We updated and improved the site with new features and dark design.</p>
-        <p>The site is now resposive and works on mobile devices without any issues.</p>
-        <p>We uploaded some of out best videos for you to watch.</p>
-     </div>
     </div>
    </div>
   </div>
