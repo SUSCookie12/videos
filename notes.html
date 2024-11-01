@@ -175,6 +175,12 @@
     <a href="index.html" class="text-green-500 font-bold">
         Home
     </a>
+    <a href="videos.html" class="text-green-500 font-bold">
+        Collection
+    </a>
+    <a href="lib.html" class="text-green-500 font-bold">
+        🔒Library
+    </a>
     <a href="notes.html" class="text-green-500 font-bold">
         Notes
     </a>
@@ -203,6 +209,14 @@
         <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='index.html'"> <!-- Adjust margin as needed -->
             <i class="fas fa-home"></i>
             <span class="ml-3">Home</span>
+        </li>
+        <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='videos.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-video"></i>
+            <span class="ml-3">Collection</span>
+        </li>
+        <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='lib.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-book"></i>
+            <span class="ml-3">🔒Library</span>
         </li>
            <hr class="border-gray-600"/>
            <li class="flex items-center text-green-400 cursor-pointer mb-4" onclick="window.location.href='notes.html'"> <!-- Adjust margin as needed -->
@@ -259,6 +273,13 @@
                     50% { box-shadow: 0 0 10px rgba(255, 192, 203, 0.7); } /* Pink */
                     75% { box-shadow: 0 0 10px rgba(255, 0, 255, 0.7); } /* Magenta */
                 }
+
+                @keyframes glow4 {
+                    0%, 100% { box-shadow: 0 0 10px rgba(184, 255, 20, 0.7); } /* Deep Pink */
+                    25% { box-shadow: 0 0 10px rgba(255, 203, 105, 0.7); } /* Hot Pink */
+                    50% { box-shadow: 0 0 10px rgba(108, 78, 189, 0.7); } /* Pink */
+                    75% { box-shadow: 0 0 10px rgba(70, 211, 211, 0.7); } /* Magenta */
+                }
         
                 .glow1 {
                     animation: glow1 3s infinite alternate;
@@ -270,6 +291,10 @@
         
                 .glow3 {
                     animation: glow3 3s infinite alternate;
+                }
+
+                .glow4 {
+                    animation: glow4 3s infinite alternate;
                 }
             </style>
         
@@ -285,6 +310,10 @@
                 <li class="flex items-start justify-center bg-[262626] p-4 rounded-lg shadow-md glow3">
                     <div class="mr-2">📺</div>
                     <div>We uploaded some of our best videos for you to watch.</div>
+                </li>
+                <li class="flex items-start justify-center bg-[262626] p-4 rounded-lg shadow-md glow4">
+                    <div class="mr-2">📚</div>
+                    <div>We are working on a new page - Library, where you can find all our resources.</div>
                 </li>
             </ul>
         </div>

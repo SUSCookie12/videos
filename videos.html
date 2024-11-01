@@ -164,6 +164,12 @@
     <a href="index.html" class="text-green-500 font-bold">
         Home
     </a>
+    <a href="videos.html" class="text-green-500 font-bold">
+        Collection
+    </a>
+    <a href="lib.html" class="text-green-500 font-bold">
+        🔒Library
+    </a>
     <a href="notes.html" class="text-green-500 font-bold">
         Notes
     </a>
@@ -189,9 +195,17 @@
      </div>
      <nav>
       <ul class="space-y-4">
-        <li class="flex items-center text-green-400 cursor-pointer mb-4" onclick="window.location.href='index.html'"> <!-- Adjust margin as needed -->
+        <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='index.html'"> <!-- Adjust margin as needed -->
             <i class="fas fa-home"></i>
             <span class="ml-3">Home</span>
+        </li>
+        <li class="flex items-center text-green-400 cursor-pointer mb-4" onclick="window.location.href='videos.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-video"></i>
+            <span class="ml-3">Collection</span>
+        </li>
+        <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='lib.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-book"></i>
+            <span class="ml-3">🔒Library</span>
         </li>
            <hr class="border-gray-600"/>
            <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='notes.html'"> <!-- Adjust margin as needed -->
@@ -238,11 +252,14 @@
     <div class="w-full md:w-4/5 p-5">
      <div class="flex justify-between items-center mb-5">
       <div>
-       <button class="text-gray-400 mr-5" onclick="window.location.href='index.html'">
-        Library
-       </button>
+        <button class="text-gray-400 mr-5" onclick="window.location.href='index.html'">
+            Home
+           </button>
        <button class="text-[#84e9f0] font-bold mr-5">
         Videos
+       </button>
+       <button class="text-gray-400" onclick="window.location.href='lib.html'">
+        |🔒Library|
        </button>
       </div>
       <div class="flex items-center relative">

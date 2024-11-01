@@ -1,16 +1,18 @@
 <html lang="en">
  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/duotone.min.css"> <!-- Duotone icons -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-    CookieMovie - 🏡Home
+    CookieMovie - 📺Videos
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
   <style>
-   body {
+    body {
             overflow-x: hidden; /* Hides horizontal scrollbar */
             touch-action: pan-y; /* Prevent horizontal touch scrolling */
             font-family: 'Roboto', sans-serif;
@@ -129,26 +131,35 @@
             border-radius: 50%;
         }
     }
+    .redirect-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: #262626; /* Background color */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        font-size: 16px; /* Font size */
+    }
+    .redirect-button i {
+        font-size: 1rem; /* Icon size */
+    }
   </style>
  </head>
  <body class="bg-[#2e2e2e] text-white">
   <div class="flex flex-col">
-   <!-- Mobile Header -->
+    <!-- Mobile Header -->
    <div class="mobile-header w-full p-5 md:hidden">
-    <div class="menu-icon" id="menuIcon">
-     <i class="fas fa-bars">
-     </i>
-    </div>
-    <button id="notificationButton1" class="relative">
-        <i class="fas fa-bell text-gray-400">
-        </i>
-       </button>
     <div class="flex items-center text-xl font-bold">
         CookieMovie
         <div class="bg-green-500 p-2 rounded-full ml-2">
             <i class="fas fa-cookie text-white"></i>
         </div>
     </div>
+    <button class="redirect-button" onclick="window.location.href='index.html'">
+        <i class="fas fa-arrow-rotate-left"></i>
+    </button>
    </div>
    </div>
    <div class="mobile-menu md:hidden" id="mobileMenu">
@@ -178,12 +189,12 @@
         Coming Soon
        </a>
     <a href="#">
-     Development Version: 3.7.7.7
+      Development Version: 3.7.7.7
     </a>
    </div>
    <div class="flex">
     <!-- Sidebar -->
-    <div class="w-1/5 bg-[#1c1c1c] h-screen p-5 sidebar">
+    <div class="w-1/5 bg-[1c1c1c] h-screen p-5 sidebar">
      <div class="flex items-center mb-10">
       <div class="bg-green-500 p-2 rounded-full">
        <i class="fas fa-cookie text-white">
@@ -195,31 +206,31 @@
      </div>
      <nav>
       <ul class="space-y-4">
-       <li class="flex items-center text-green-400 cursor-pointer mb-4" onclick="window.location.href='index.html'"> <!-- Adjust margin as needed -->
-        <i class="fas fa-home"></i>
-        <span class="ml-3">Home</span>
-    </li>
-    <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='videos.html'"> <!-- Adjust margin as needed -->
-        <i class="fas fa-video"></i>
-        <span class="ml-3">Collection</span>
-    </li>
-    <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='lib.html'"> <!-- Adjust margin as needed -->
-        <i class="fas fa-book"></i>
-        <span class="ml-3">🔒Library</span>
-    </li>
-       <hr class="border-gray-600"/>
-       <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='notes.html'"> <!-- Adjust margin as needed -->
-        <i class="fas fa-sticky-note"></i>
-        <span class="ml-3">Notes</span>
-    </li>
-    <hr class="border-gray-600"/>
-       <li class="flex items-center text-gray-400 cursor-pointer">
-        <i class="fas fa-clock">
-        </i>
-        <span class="ml-3">
-         Coming Soon
-        </span>
-       </li>
+        <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='index.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-home"></i>
+            <span class="ml-3">Home</span>
+        </li>
+        <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='videos.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-video"></i>
+            <span class="ml-3">Collection</span>
+        </li>
+        <li class="flex items-center text-green-400 cursor-pointer mb-4" onclick="window.location.href='lib.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-book"></i>
+            <span class="ml-3">🔒Library</span>
+        </li>
+           <hr class="border-gray-600"/>
+           <li class="flex items-center text-gray-400 cursor-pointer mb-4" onclick="window.location.href='notes.html'"> <!-- Adjust margin as needed -->
+            <i class="fas fa-sticky-note"></i>
+            <span class="ml-3">Notes</span>
+        </li>
+        <hr class="border-gray-600"/>
+        <li class="flex items-center text-gray-400 cursor-pointer">
+            <i class="fas fa-clock">
+            </i>
+            <span class="ml-3">
+             Coming Soon
+            </span>
+           </li>
       </ul>
      </nav>
      <div class="mt-10">
@@ -236,146 +247,46 @@
     </div>
     <!-- Main Content -->
     <div class="w-full md:w-4/5 p-5">
-     <div class="flex justify-between items-center mb-5">
-      <div>
-        <button class="text-[#84e9f0] font-bold mr-5">
-         Home
-        </button>
-       <button class="text-gray-400 mr-5" onclick="window.location.href='videos.html'">
-        Videos
-       </button>
-       <button class="text-gray-400 mr-5" onclick="window.location.href='lib.html'">
-        |🔒Library|
-       </button>
-      </div>
-      <div class="flex items-center relative">
-       <div class="relative">
-        <input class="bg-[#292929] text-white rounded-full pl-10 pr-4 py-2" placeholder="Search" type="text" id="searchInput"/>
-        <i class="fas fa-search absolute left-3 top-2.5 text-[fffff]">
-        </i>
-       </div>
-       <div class="ml-5 relative">
-        <button id="notificationButton" class="relative">
-         <i class="fas fa-bell text-gray-400">
-         </i>
-        </button>
-        <div class="notification-popup" id="notificationPopup">
-         <button class="close-btn" id="closeNotificationPopup">
-            <i class="fas fa-times text-black"></i>
-        </button>
-        <ul>
-         <li>
-           🌑New Dark interface🕶️
-         </li>
-         <li>
-           📱Resposive Mobile Version of the site📱
-         </li>
-         <li>
-           📺New uploaded videos📺
-         </li>
-         </ul>
+    <div class="flex bg-[1a1a1a] text-gray-300 p-6 rounded-lg shadow-lg">
+        <div class="w-full md:w-3/4 pr-5 mx-auto flex flex-col items-center"> <!-- Centering the content -->
+            <h2 class="text-2xl font-bold mb-5 text-gray-100 border-b border-gray-700 pb-2 text-center">
+                |🔒Library|
+            </h2>
+            <style>
+                @keyframes glow1 {
+                    0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); } /* Red */
+                    25% { box-shadow: 0 0 10px rgba(255, 165, 0, 0.7); } /* Orange */
+                    50% { box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); } /* Yellow */
+                    75% { box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); } /* Green */
+                }
+        
+                @keyframes glow2 {
+                    0%, 100% { box-shadow: 0 0 10px rgba(0, 0, 255, 0.7); } /* Blue */
+                    25% { box-shadow: 0 0 10px rgba(75, 0, 130, 0.7); } /* Indigo */
+                    50% { box-shadow: 0 0 10px rgba(238, 130, 238, 0.7); } /* Violet */
+                    75% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); } /* Cyan */
+                }
+        
+                @keyframes glow3 {
+                    0%, 100% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.7); } /* Deep Pink */
+                    25% { box-shadow: 0 0 10px rgba(255, 105, 180, 0.7); } /* Hot Pink */
+                    50% { box-shadow: 0 0 10px rgba(255, 192, 203, 0.7); } /* Pink */
+                    75% { box-shadow: 0 0 10px rgba(255, 0, 255, 0.7); } /* Magenta */
+                }
+        
+                .glow1 {
+                    animation: glow1 3s infinite alternate;
+                }
+        
+                .glow2 {
+                    animation: glow2 3s infinite alternate;
+                }
+        
+                .glow3 {
+                    animation: glow3 3s infinite alternate;
+                }
+            </style>
         </div>
-       </div>
-      </div>
-     </div>
-     <div class="border-b-2 border-[262626] mb-6"></div>
-     <div class="flex">
-      <div class="w-full md:w-3/4 pr-5">
-       <h2 class="text-2xl font-bold mb-5">
-        Trending ≈ 1382 views
-       </h2>
-       <div class="relative mb-10 bg-gray-700 rounded-lg h-64 flex items-center justify-center video-item" data-title="Нашият нов сървър! Развеждаме Ви с КОЛЕЖКАТА!!!!" data-video="https://www.youtube.com/embed/GfIHY4edz98">
-        <div class="absolute inset-0 trending-thumbnail">
-         <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/GfIHY4edz98/hqdefault.jpg"/>
-        </div>
-        <div class="absolute bottom-5 left-5">
-         <h3 class="text-3xl font-bold trending-title">
-          Нашият нов сървър! Развеждаме Ви с КОЛЕЖКАТА!!!!
-         </h3>
-        </div>
-        <button class="absolute bottom-5 right-5 bg-green-500 text-white px-4 py-2 rounded-full watch-now-btn" data-video="https://www.youtube.com/embed/GfIHY4edz98">
-         Watch Now
-        </button>
-       </div>
-       <h2 class="text-2xl font-bold mb-5">
-        For You
-       </h2>
-       <div class="grid grid-cols-3 gap-4">
-        <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Beginner Tutorial" data-video="https://www.youtube.com/embed/CgHgqZW4mfc" style="width: 240px; height: 135px;">
-            <div class="absolute inset-0">
-                <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/CgHgqZW4mfc/hqdefault.jpg"/>
-            </div>
-            <div class="absolute bottom-2 left-2">
-                <h3 class="text-sm font-bold" style="color: #ffff;"> <!-- Change #FF5733 to your desired color -->
-                    Завръщаме Fortnite УДЪРНО! Marvel Season is Back
-                </h3>
-            </div>
-        </div>
-        <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Intermediate Tutorial" data-video="https://www.youtube.com/embed/NAktVKUP5G8" style="width: 240px; height: 135px;">
-         <div class="absolute inset-0">
-          <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/NAktVKUP5G8/hqdefault.jpg"/>
-         </div>
-         <div class="absolute bottom-2 left-2">
-          <h3 class="text-sm font-bold">
-            😮Phasmophobia Еп.1 |!!!Дух печели 2VS1!!!|😮
-          </h3>
-         </div>
-        </div>
-        <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/jusZkkk5H04" style="width: 240px; height: 135px;">
-         <div class="absolute inset-0">
-          <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/jusZkkk5H04/hqdefault.jpg"/>
-         </div>
-         <div class="absolute bottom-2 left-2">
-          <h3 class="text-sm font-bold">
-            How to make smooth keyframes in CapCut
-          </h3>
-         </div>
-        </div>
-        <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/KaCkMyPXhek" style="width: 240px; height: 135px;">
-         <div class="absolute inset-0">
-          <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/KaCkMyPXhek/hqdefault.jpg"/>
-         </div>
-         <div class="absolute bottom-2 left-2">
-          <h3 class="text-sm font-bold">
-            Малко Valorant с Наско Еп.4
-          </h3>
-         </div>
-        </div>
-        <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/MrZ0kE2Ydjs" style="width: 240px; height: 135px;">
-         <div class="absolute inset-0">
-          <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/MrZ0kE2Ydjs/hqdefault.jpg"/>
-         </div>
-         <div class="absolute bottom-2 left-2">
-          <h3 class="text-sm font-bold">
-            AmongUS с приятели! ЩЕ ГИ КЛЪЦКАМЕ ЛИ Еп.1
-          </h3>
-         </div>
-        </div>
-        <div class="bg-gray-700 rounded-lg relative video-item cursor-pointer" data-title="How to Make a Website with HTML and CSS - Advanced Tutorial" data-video="https://www.youtube.com/embed/VfXs0nqQ6Fs" style="width: 240px; height: 135px;">
-         <div class="absolute inset-0">
-          <img alt="Thumbnail" class="rounded-lg w-full h-full object-cover" src="https://img.youtube.com/vi/VfXs0nqQ6Fs/hqdefault.jpg"/>
-         </div>
-         <div class="absolute bottom-2 left-2">
-          <h3 class="text-sm font-bold">
-            Правим се на 7 годишни ботове!
-          </h3>
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="w-1/4 pl-5 relative coming-soon hidden md:block">
-       <div class="absolute top-0 left-0 h-full w-1 bg-[262626] rounded-full">
-       </div>
-       <h2 class="text-2xl font-bold mb-5">
-        Coming Soon
-       </h2>
-       <div class="bg-[262626] rounded-lg h-20 flex items-center justify-center">
-        <p class="text-gray-400">
-         Coming Soon
-        </p>
-       </div>
-      </div>
-     </div>
     </div>
    </div>
   </div>
